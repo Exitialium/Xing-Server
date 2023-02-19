@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户列表</title>
+    <head>
+    <body>
+        <h1>用户列表</h1>
+        <table>
+            <tr>
+                <th>用户名</th>
+                <th>邮箱</th>
+                <th>操作</th>
+                <th>what?</th>
+                <img src="http://www.baidu.com/img/bdlogo.gif" />   
+                <img src="/static/img/download.jfif" />   
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="/user/{{ user.id }}">查看</a>
+                    <a href="/user/{{ user.id }}/edit">编辑</a>
+                    <a href="/user/{{ user.id }}/delete">删除</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
